@@ -1,0 +1,31 @@
+<div id="news_info">
+<% if(success.length) { %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+<% } %> 
+<% if(errors.length) { %>
+      <div class="alert alert-danger" role="alert"><%= errors %></div>
+<% } %> 
+<h3><b><%= info.title %></b></h3>
+<hr>
+<p><%= info.text %></p>
+</div>
+<br>
+<% if(req.session.authenticated) { %>
+<h4>Comments</h4>
+<hr>
+<% for(var i = 0; i < info.comments.length; i++) { %>
+		<div class="well">
+			<div class="row">
+				<div class="col-md-2">Posted by: <b><a href="#"><%= info.comments[i].created_by %></a></b></div><div class="col-md-10"><p><%= info.comments[i].comment %></p></div>
+			</div>
+<hr>
+		</div>
+<% } %>
+<form action="" method="POST">
+	<input type='hidden' name='_csrf' value='<%= _csrf %>'>
+	<input type='hidden' name='news_id' value='<%= info.id %>'>
+	<textarea name="comment" class="form-control" rows="3"></textarea>
+	<br>
+	<button class="btn btn-default" type="submit">Send comment</button>
+</form>
+<% } %>

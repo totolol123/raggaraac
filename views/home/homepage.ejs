@@ -1,0 +1,6 @@
+<% for(var i = 0; i < news.length; i++) { %>
+	<div class="well" id="news">
+		<h3><a href="/news/<%= news[i].id %>" onclick="animateTitle();"><%= news[i].title %></a></h3>
+		<p><%= news[i].text %></p>
+	</div>
+<% } %>
