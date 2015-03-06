@@ -1,0 +1,11 @@
+<div id="dashboard">
+<% if(success.length) { %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+<% } %>
+<% if(errors.length) { %>
+      <div class="alert alert-danger" role="alert"><%= errors %></div>
+<% } %>
+<h3><b>Dashboard </b><small><%= req.session.user %></small></h3>
+<hr>
+<p>a</p>
+</div>

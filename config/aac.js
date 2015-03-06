@@ -2,7 +2,7 @@ module.exports.aac = {
 
 	register: {
 
-		premium: 30,
+		premium: 35,
 		points: 10
 	}
 }

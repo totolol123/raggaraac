@@ -39,7 +39,8 @@ module.exports.routes = {
   'post /login': 'LoginController.processForm',
   'get /register': 'RegisterController.showForm',
   'post /register': 'RegisterController.processForm',
-  'get /credits': 'InfoController.showCredits'
+  'get /credits': 'InfoController.showCredits',
+  'get /dashboard': 'DashboardController.showForm'
 
   /***************************************************************************
   *                                                                          *

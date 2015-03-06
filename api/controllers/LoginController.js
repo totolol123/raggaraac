@@ -18,8 +18,9 @@ module.exports = {
 			req.session.authenticated = true;
 			req.session.last_action = 0;
 			req.session.user = data[0].name;
+			req.flash('success', 'You are now logged in');
 
-			return res.redirect('/');
+			return res.redirect('/dashboard');
 		});
 	}
 }

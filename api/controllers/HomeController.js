@@ -1,7 +1,7 @@
 module.exports = {
 
   showNews: function (req, res) {
-  	
+
   	News.find({ limit: 5, sort: 'id DESC'}).exec(function(err, data) {
 
   		return res.view('home/homepage', {news: data});
@@ -17,13 +17,13 @@ module.exports = {
     	}
 
     	return res.view('home/news', {info: data[0], success: req.flash('success'), errors: req.flash('errors')});
-    });	
+    });
   },
   processComment: function(req, res) {
 
     if(Date.now() > req.session.last_action + 60000) {
 
-      Comments.create({ 
+      Comments.create({
 
             created_by: req.session.user,
             comment: req.param('comment'),
