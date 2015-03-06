@@ -44,3 +44,8 @@ animateStuff('#register_info', 'bounceInLeft', function() {
 
 
 });
+
+animateStuff('#create_char', 'bounceInLeft', function() {
+
+
+});

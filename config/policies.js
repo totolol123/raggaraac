@@ -50,7 +50,9 @@ module.exports.policies = {
 	// }
   DashboardController: {
 
-     '*': 'sessionAuth'
+     '*': 'sessionAuth',
+     'createCharacterForm': 'characterLimit',
+     'processCreateCharacter': 'characterLimit'
   },
   LoginController: {
 

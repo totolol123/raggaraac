@@ -39,6 +39,16 @@ module.exports = {
 
 			defaultsTo: 0,
 			type: 'integer'
+		},
+		session: {
+
+			defaultsTo: 'NaN',
+			unique: true,
+			type: 'string'
+		},
+		tibia: {
+
+			model: 'TibiaAccounts'
 		}
 	},
 	loginAuth:  function(opts, cb) {

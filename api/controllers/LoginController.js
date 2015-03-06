@@ -15,12 +15,26 @@ module.exports = {
 				return res.redirect('/login');
 			}
 
-			req.session.authenticated = true;
-			req.session.last_action = 0;
-			req.session.user = data[0].name;
-			req.flash('success', 'You are now logged in');
+			Accounts.update({name: data[0].name}, {session: req.sessionID}).exec(function(err2, qry) {
 
-			return res.redirect('/dashboard');
+				if(err2) {
+
+					req.flash('errors', 'Unable to update session id');
+
+					return res.redirect('/login');
+				}
+
+				req.session.authenticated = true;
+				req.session.user = {
+
+						last_action: 0,
+						points: data[0].points,
+						name: data[0].name
+				};
+				req.flash('success', 'You are now logged in');
+
+				return res.redirect('/dashboard');
+			});
 		});
 	}
 }

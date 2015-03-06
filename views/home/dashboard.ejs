@@ -5,7 +5,24 @@
 <% if(errors.length) { %>
       <div class="alert alert-danger" role="alert"><%= errors %></div>
 <% } %>
-<h3><b>Dashboard </b><small><%= req.session.user %></small></h3>
+<h3><b>Dashboard </b><small><%= req.session.user.name %></small>
+   <div class="pull-right">
+      <% if(req.session.user.points === 0) { %>
+      <span class="label label-danger">
+         <%= req.session.user.points %> Points
+      <% } else { %>
+      <span class="label label-success">
+         <%= req.session.user.points %> Points
+      <% } %>
+      </span>
+   </div>
+</h3>
 <hr>
-<p>a</p>
+<% if(players.length === 0) { %>
+      <div class="alert alert-danger" role="alert">You seem to have <b>0</b> characters - <a href="/dashboard/create" class="alert-link">Create one now</a></div>
+<% } else { %>
+      <% for(var i = 0; i < players.length; i++) { %>
+            <div class="well bg-danger">aa</div>
+      <% } %>
+<% } %>
 </div>

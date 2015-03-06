@@ -4,5 +4,6 @@ module.exports.aac = {
 
 		premium: 35,
 		points: 10
-	}
+	},
+	characterLimit: 1
 }

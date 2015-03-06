@@ -41,6 +41,10 @@ module.exports = {
 
          required: true,
          type: 'integer'
+      },
+      aac: {
+
+         model: 'Accounts'
       }
    },
    beforeCreate: function(attributes, next) {
