@@ -49,3 +49,18 @@ animateStuff('#create_char', 'bounceInLeft', function() {
 
 
 });
+
+animateStuff('#show_player_0', 'bounceInLeft', function() {
+
+
+});
+
+animateStuff('#show_player_1', 'bounceInLeft', function() {
+
+
+});
+
+animateStuff('#show_player_2', 'bounceInLeft', function() {
+
+
+});

@@ -5,7 +5,7 @@
 <% if(errors.length) { %>
       <div class="alert alert-danger" role="alert"><%= errors %></div>
 <% } %>
-<h3><b>Dashboard </b><small><%= req.session.user.name %></small>
+<h3><b>Dashboard </b><small>Welcome <b><%= req.session.user.name %></b></small>
    <div class="pull-right">
       <% if(req.session.user.points === 0) { %>
       <span class="label label-danger">
@@ -21,8 +21,32 @@
 <% if(players.length === 0) { %>
       <div class="alert alert-danger" role="alert">You seem to have <b>0</b> characters - <a href="/dashboard/create" class="alert-link">Create one now</a></div>
 <% } else { %>
+      <div class="row">
       <% for(var i = 0; i < players.length; i++) { %>
-            <div class="well bg-danger">aa</div>
+            <div class="col-md-4" id="show_player_<%= i %>">
+               <div class="well">
+                  <b><a href="/view/<%= players[i].name %>"><%= players[i].name %></a></b>
+                  <div class="pull-right">
+                     <span class="label label-info">level <%= players[i].level %></span>
+                     <% if(players[i].vocation === 1 || players[i].vocation === 5) { %>
+                           <span class="label label-primary">Sorcerer</span>
+                     <% } else if(players[i].vocation === 2 || players[i].vocation === 6) { %>
+                           <span class="label label-primary">Druid</span>
+                     <% } else if(players[i].vocation === 3 || players[i].vocation === 7) { %>
+                           <span class="label label-primary">Paladin</span>
+                     <% } else if(players[i].vocation === 4 || players[i].vocation === 8) { %>
+                           <span class="label label-primary">Knight</span>
+                     <% } %>
+                  </div>
+                     <div class="row">
+                        <div class="col-md-8">aa</div>
+                        <div class="col-md-4">
+                           <img class="pull-right" src="http://www.aurera-global.com/outfit-images/outfit.php?id=<%= players[i].looktype %>&addons=<%= players[i].lookaddons %>&head=<%= players[i].lookhead %>&body=<%= players[i].lookbody %>&legs=<%= players[i].looklegs %>&feet=<%= players[i].lookfeet %>"></img>
+                        </div>
+                     </div>
+               </div>
+            </div>
       <% } %>
+      </div>
 <% } %>
 </div>
