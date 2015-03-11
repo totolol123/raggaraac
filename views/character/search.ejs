@@ -1,0 +1,12 @@
+<div id="character_search">
+<h3><b>Found <%= results.length %> players</b><small> Using keywords "<%= keywords %>"</small></h3>
+<hr>
+<table class="table table-striped">
+   <thead>
+      <tr><td><b>#</b></td><td><b>Name</b></td><td></td></tr>
+   </thead>
+   <% for(var i = 0; i < results.length; i++) { %>
+         <tr><td width="6%"><%= i + 1 %></td><td><b><a href="/view/<%= results[i].name %>" style="text-decoration: none;"><%= results[i].name %></a></b></td><td class="pull-right"><a class="btn btn-info btn-xs" href="/view/<%= results[i].name %>" role="button" id="char_view_<%= i %>">View</a></td></tr>
+   <% } %>
+</table>
+</div>

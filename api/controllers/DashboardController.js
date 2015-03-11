@@ -36,7 +36,7 @@ module.exports = {
 
       Accounts.findBySession(req.sessionID).exec(function(err, data) {
 
-         if(data.length === 0) {
+         if(err || data.length === 0) {
 
             return res.redirect('/logout');
          }
@@ -46,7 +46,7 @@ module.exports = {
             name: req.param('name'),
             account_id: data[0].id,
             level: 8,
-            vocation: 2,
+            vocation: req.param('vocation'),
             health: 150,
             healthmax: 150,
             experience: 0,
@@ -54,7 +54,7 @@ module.exports = {
             mana: 0,
             manamax: 0,
             town_id: 1,
-            sex: 1,
+            sex: req.param('sex'),
             balance: 1000
          }).exec(function(err, players) {
 

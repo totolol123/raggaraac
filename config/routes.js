@@ -43,7 +43,10 @@ module.exports.routes = {
   'get /dashboard': 'DashboardController.showForm',
   'get /dashboard/create': 'DashboardController.createCharacterForm',
   'post /dashboard/create': 'DashboardController.processCreateCharacter',
-  'get /logout': 'DashboardController.logOut'
+  'get /logout': 'DashboardController.logOut',
+  'post /search': 'CharacterController.searchCharacter',
+  'get /view/:name': 'CharacterController.showCharacter',
+  'get /community/highscores/:type/:vocation': 'CommunityController.showHighscores'
 
   /***************************************************************************
   *                                                                          *

@@ -1,0 +1,37 @@
+<div id="highscores">
+   <h3><b>Showing highscores for <a href="#"><%= vocation %>s</a> ordered by <a href="#"><%= type %></a></b></h3><hr>
+   <div class="row">
+      <div class="col-md-3">
+         <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/community/highscores/level/<%= vocation.toLowerCase() %>">Level</a></li>
+            <li role="presentation"><a href="/community/highscores/magic/<%= vocation.toLowerCase() %>">Magic Level</a></li>
+            <li role="presentation"><a href="/community/highscores/fish/<%= vocation.toLowerCase() %>">Fishing</a></li>
+            <li role="presentation"><a href="/community/highscores/shield/<%= vocation.toLowerCase() %>">Shielding</a></li>
+            <li role="presentation"><a href="/community/highscores/dist/<%= vocation.toLowerCase() %>">Distance Fighting</a></li>
+            <li role="presentation"><a href="/community/highscores/axe/<%= vocation.toLowerCase() %>">Axe Fighting</a></li>
+            <li role="presentation"><a href="/community/highscores/sword/<%= vocation.toLowerCase() %>">Sword Fighting</a></li>
+            <li role="presentation"><a href="/community/highscores/club/<%= vocation.toLowerCase() %>">Club Fighting</a></li>
+            <li role="presentation"><a href="/community/highscores/fist/<%= vocation.toLowerCase() %>">Fist Fighting</a></li>
+            <hr>
+            <li role="presentation"><a href="/community/highscores/<%= skill_nav %>/sorcerer">Sort by Sorcerers</a></li>
+            <li role="presentation"><a href="/community/highscores/<%= skill_nav %>/druid">Sort by Druids</a></li>
+            <li role="presentation"><a href="/community/highscores/<%= skill_nav %>/paladin">Sort by Paladins</a></li>
+            <li role="presentation"><a href="/community/highscores/<%= skill_nav %>/knight">Sort by Knights</a></li>
+         </ul>
+      </div>
+      <div class="col-md-9">
+         <table class="table table-striped">
+            <thead>
+               <tr><td><b>#</b></td><td><b>Name</b></td><td><b>Skill</b></td></tr>
+            </thead>
+            <tbody>
+               <% for(var i = 0; i < players.length; i++) { %>
+                     <tr>
+                        <td><%= i + 1 %></td><td><b><a href="/view/<%= players[i].name %>" style="text-decoration: none;"><%= players[i].name %></a></b></td><td><%= players[i][skill] %></td></tr>
+                     </tr>
+               <% } %>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

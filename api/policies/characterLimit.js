@@ -2,7 +2,7 @@ module.exports = function(req, res, next) {
 
    Accounts.findBySession(req.sessionID).exec(function(err, data) {
 
-      if(data.length === 0) {
+      if(err || data.length === 0) {
 
          return res.redirect('/logout');
       }

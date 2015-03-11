@@ -4,14 +4,14 @@ module.exports = {
 
   	News.find({ limit: 5, sort: 'id DESC'}).exec(function(err, data) {
 
-  		return res.view('home/homepage', {news: data});
+  		return res.view('home/homepage', {news: data, errors: req.flash('errors')});
   	});
   },
   showInfo: function (req, res) {
 
     News.findById(req.param('id')).populate('comments').exec(function(err, data) {
 
-    	if(data.length === 0) {
+    	if(err || data.length === 0) {
 
     		return res.redirect('/');
     	}
@@ -32,7 +32,7 @@ module.exports = {
 
             if(err) {
 
-
+               return res.redirect('/');
             }
 
             req.session.user.last_action = Date.now();

@@ -1,3 +1,6 @@
+<% if(errors.length) { %>
+      <div class="alert alert-danger" role="alert"><%= errors %></div>
+<% } %>
 <% for(var i = 0; i < news.length; i++) { %>
 	<div class="well" id="news">
 		<h3><a href="/news/<%= news[i].id %>" onclick="animateTitle();"><%= news[i].title %></a></h3>

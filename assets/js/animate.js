@@ -30,6 +30,13 @@ $('#nav_register').mouseover(function() {
 	});
 });
 
+$('[id^=char_view]').mouseover(function() {
+
+	animateStuff('#' + this.id, 'swing', function() {
+
+	});
+});
+
 animateStuff('#news_info', 'bounceInLeft', function() {
 
 
@@ -61,6 +68,21 @@ animateStuff('#show_player_1', 'bounceInLeft', function() {
 });
 
 animateStuff('#show_player_2', 'bounceInLeft', function() {
+
+
+});
+
+animateStuff('#character_search', 'bounceInLeft', function() {
+
+
+});
+
+animateStuff('#highscores', 'bounceInLeft', function() {
+
+
+});
+
+animateStuff('#character_view', 'bounceInLeft', function() {
 
 
 });

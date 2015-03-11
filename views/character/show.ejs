@@ -1,0 +1,33 @@
+<div id="character_view">
+   <h3><b>View character <a href="#"><%= info.name %></a></b></h3>
+   <hr>
+   <div class="row">
+      <div class="col-md-10">
+         <table class="table table-striped">
+            <tr><td><b>Name:</b></td><td><a href="#" style="text-decoration: none;"><%= info.name %></a></td></tr>
+            <tr><td><b>Sex:</b></td><td>
+            <% if(info.sex === 0) { %>
+               Male
+            <% } else { %>
+               Female
+            <% } %>
+            </td></tr>
+            <tr><td><b>Vocation:</b></td><td>
+               <% if(info.vocation === 1 || info.vocation === 5) { %>
+                     Sorcerer
+               <% } else if(info.vocation === 2 || info.vocation === 6) { %>
+                     Druid
+               <% } else if(info.vocation === 3 || info.vocation === 7) { %>
+                     Paladin
+               <% } else if(info.vocation === 4 || info.vocation === 8) { %>
+                     Knight
+               <% } %>
+            </td></tr>
+            <tr><td><b>Level:</b></td><td><%= info.level %></td></tr>
+         </table>
+      </div>
+      <div class="col-md-2">
+         <img width="64px" height="64px" src="http://www.aurera-global.com/outfit-images/outfit.php?id=<%= info.looktype %>&addons=<%= info.lookaddons %>&head=<%= info.lookhead %>&body=<%= info.lookbody %>&legs=<%= info.looklegs %>&feet=<%= info.lookfeet %>"></img>
+      </div>
+   </div>
+</div>

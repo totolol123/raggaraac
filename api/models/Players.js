@@ -70,7 +70,7 @@ module.exports = {
          type: 'integer',
       },
       maglevel: {
-         
+
          type: 'integer',
          required: true
       },
@@ -108,6 +108,34 @@ module.exports = {
 
          type: 'integer',
          required: true
+      },
+      skill_fist: {
+
+         type: 'integer'
+      },
+      skill_club: {
+
+         type: 'integer'
+      },
+      skill_sword: {
+
+         type: 'integer'
+      },
+      skill_axe: {
+
+         type: 'integer'
+      },
+      skill_dist: {
+
+         type: 'integer'
+      },
+      skill_shielding: {
+
+         type: 'integer'
+      },
+      skill_fishing: {
+
+         type: 'integer'
       }
    }
 }

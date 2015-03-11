@@ -1,5 +1,8 @@
 <div id="register_info">
 <h3>Register form</h3><hr>
+<% if(errors.length) { %>
+      <div class="alert alert-danger" role="alert"><%= errors %></div>
+<% } %> 
 <form class="form-horizontal" method="POST" action="">
 <input type='hidden' name='_csrf' value='<%= _csrf %>'>
   <div class="form-group">

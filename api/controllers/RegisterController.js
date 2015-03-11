@@ -18,8 +18,7 @@ module.exports = {
 
 				if(err.ValidationError) {
 
-					console.log(err.ValidationError)
-					req.flash('errors', err.ValidationError);
+					req.flash('errors', 'Some fields are invalid');
 
 					return res.redirect('/register');
 				}

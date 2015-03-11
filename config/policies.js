@@ -48,22 +48,26 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
-  DashboardController: {
+   CharacterController: {
 
-     '*': 'sessionAuth',
-     'createCharacterForm': 'characterLimit',
-     'processCreateCharacter': 'characterLimit'
-  },
-  LoginController: {
+         'showCharacter': 'characterExists'
+   },
+   DashboardController: {
 
-    '*': 'sessionGuest'
-  },
-  RegisterController: {
+        '*': 'sessionAuth',
+        'createCharacterForm': 'characterLimit',
+        'processCreateCharacter': 'characterLimit'
+     },
+     LoginController: {
 
-    '*': 'sessionGuest'
-  },
-  HomeController: {
+       '*': 'sessionGuest'
+     },
+     RegisterController: {
 
-    showInfo: 'sessionAuth'
-  }
+       '*': 'sessionGuest'
+     },
+     HomeController: {
+
+       showInfo: 'sessionAuth'
+     }
 };

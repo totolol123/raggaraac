@@ -7,6 +7,11 @@
 <% } %>
 <h3><b>Dashboard </b><small>Welcome <b><%= req.session.user.name %></b></small>
    <div class="pull-right">
+      <% if(players.length === 3) { %>
+            <span class="label label-danger">You cant create new characters</span>
+      <% } else { %>
+            <a href="/dashboard/create">Create character </a>
+      <% } %>
       <% if(req.session.user.points === 0) { %>
       <span class="label label-danger">
          <%= req.session.user.points %> Points
@@ -25,7 +30,7 @@
       <% for(var i = 0; i < players.length; i++) { %>
             <div class="col-md-4" id="show_player_<%= i %>">
                <div class="well">
-                  <b><a href="/view/<%= players[i].name %>"><%= players[i].name %></a></b>
+                  <b><a href="/view/<%= encodeURI(players[i].name) %>"><%= players[i].name %></a></b>
                   <div class="pull-right">
                      <span class="label label-info">level <%= players[i].level %></span>
                      <% if(players[i].vocation === 1 || players[i].vocation === 5) { %>
